@@ -110,3 +110,15 @@ func init() {
 [scrypt维基介绍](https://zh.wikipedia.org/wiki/Scrypt)
 
 [GO中对scrypt的支持](https://godoc.org/golang.org/x/crypto/scrypt)
+
+关于go的`daemon`
+[守护进程](https://www.zhihu.com/question/38609004/answer/529315259)
+第三方解决方案`Supervisord`
+
+## 备份与恢复
+文件同步工具`rsync`
+`MySQL`和`redis`备份
+热备份和冷备份
+
+衍生
+[关于反爬虫](https://segmentfault.com/a/1190000005840672)
