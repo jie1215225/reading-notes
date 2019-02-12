@@ -59,10 +59,7 @@ Content-Length: 90                    //主体内容长度
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"... //消息体
 ```
 
-### 预防跨站脚本
-`跨站脚本攻击(Cross Site Scripting)`又称`XSS`
 
-`html/template`已经做了转义
 
 ## 数据库
 注册数据库驱动
@@ -90,3 +87,26 @@ func init() {
 扩展学习`Redis`, `MongoDB`
 
 [关于Go SQL的使用教学](http://go-database-sql.org/index.html)
+
+`session`翻译过来就是会话，是一种抽象的东西
+通常`session`客户端保存是利用不设置超时的`cookie`来实现的，如果遇到没有开启`cookie`则跟到`url`后面
+服务端实现可以通过存储数据库或者内存来
+[防止session劫持](http://www.cnblogs.com/phpstudy2015-6/p/6776919.html)
+
+`CSRF`攻击
+[防止CSRF攻击](https://www.jianshu.com/p/00fa457f6d3e)
+
+`XSS`攻击
+[防止XSS攻击](https://tech.meituan.com/2018/09/27/fe-security.html)
+
+### 密码存储问题
+
+- 弱智级 明文存储
+- 初级 哈希处理后存储
+- 中级 多次哈希后存储
+- 高级 哈希加盐存储
+- 专家级 使用`scrypt`方案
+
+[scrypt维基介绍](https://zh.wikipedia.org/wiki/Scrypt)
+
+[GO中对scrypt的支持](https://godoc.org/golang.org/x/crypto/scrypt)
