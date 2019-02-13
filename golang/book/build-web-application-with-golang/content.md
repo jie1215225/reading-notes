@@ -110,3 +110,41 @@ func init() {
 [scrypt维基介绍](https://zh.wikipedia.org/wiki/Scrypt)
 
 [GO中对scrypt的支持](https://godoc.org/golang.org/x/crypto/scrypt)
+
+关于go的`daemon`
+[守护进程](https://www.zhihu.com/question/38609004/answer/529315259)
+第三方解决方案`Supervisord`
+
+## 备份与恢复
+文件同步工具`rsync`
+`MySQL`和`redis`备份
+热备份和冷备份
+
+衍生
+[关于反爬虫](https://segmentfault.com/a/1190000005840672)
+
+
+---
+## 课后作业
+> 实现一个简易的Web框架
+
+目标:
+- 实现对用户请求路径的分配
+- HTTP的请求方法
+
+首先维持一个`map`来保存路由信息，然后遍历检查是否对应的路由信息
+
+还需要维护一个params来实现扩展
+例如:
+当要绑定`/login/:name`那么可以通过params的的name来获取这个路由的具体数据
+比较笨重的实现方法是通过`regexp`来实现
+
+借鉴`httproutes`来实现轻量级的
+`trie`[前缀数](https://zh.wikipedia.org/wiki/Trie)
+
+转发路由`ServeHTTP`还需要对请求方法进行分类
+
+`beego`对于`controller`有点像java的
+举例来说：
+就是这个路由组合beegon.controller。然后在里面重写相应的请求
+接着在路由匹配的地方通过反射来实现
